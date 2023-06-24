@@ -23,12 +23,9 @@ st.write("This app is to increase your <b>productivity</b>.", unsafe_allow_html=
 for index, todo in enumerate(todos):
 	checkbox = st.checkbox(todo, key=todo)
 	if checkbox:
-		del st.session_state[todo]
 		todos.pop(index)
 		cli.write_todos(todos)
-
-if st.checkbox:
-	print(st.checkbox)
+		del st.session_state[todo]
 
 st.text_input(
 	label="",
